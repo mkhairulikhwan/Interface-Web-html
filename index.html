@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+
+    <title>Belajar CRUD</title>
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"> CRUD - Bootstrap 5 </a>
+      </div>
+    </nav>
+    <!-- Judul -->
+    <div class="container">
+      <h1 class="mt-4">Data Siswa</h1>
+      <figure>
+        <blockquote class="blockquote">
+          <p>Berisi Data Yang Telah Disimpan di Database.</p>
+        </blockquote>
+        <figcaption class="blockquote-footer">CRUD <cite title="Source Title">Creat Read Update Delete</cite></figcaption>
+      </figure>
+      <button type="button" class="btn btn-primary mb-2">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        Tambah Data
+      </button>
+      <div class="table-responsive mt-3">
+        <table class="table align-middle table-bordered table-hover">
+          <thead>
+            <tr>
+              <th><center>No.</center></th>
+              <th>Nisn</th>
+              <th>Nama Siswa</th>
+              <th>Jenis Kelamin</th>
+              <th>Foto Siswa</th>
+              <th>Alamat</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><center>1.</center></td>
+              <td>12345</td>
+              <td>Paul Pogba</td>
+              <td>Laki-Laki</td>
+              <td>
+                <img src="img/img1.jpg" style="width: 100px" />
+              </td>
+              <td>Jln. Ayani</td>
+              <td>
+                <button type="button" class="btn btn-success btn-sm">
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btn btn-danger btn-sm">
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
