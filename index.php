@@ -1,5 +1,7 @@
 <?php 
 include 'koneksi.php'; 
+session_start();
+
 
 $query = 'SELECT * FROM tb_siswa;';
 $sql = mysqli_query($conn, $query);
@@ -20,8 +22,18 @@ $no = 0;
     <!-- font awesome -->
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
 
+    <!-- data tables -->
+    <link rel="stylesheet" type="text/css" href="datatables/datatables.css">
+    <script type="text/javascript" src="datatables/datatables.js"></script>
+
     <title>Belajar CRUD</title>
 </head>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#dt').DataTables();
+});
+</script>
 
 <body>
     <nav class="navbar bg-primary" data-bs-theme="dark">
@@ -43,8 +55,23 @@ $no = 0;
             <i class="fa fa-plus" aria-hidden="true"></i>
             Tambah Data
         </a>
+
+        <?php 
+            if(isset($_SESSION['eksekusi'])):
+        ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?php 
+                echo $_SESSION['eksekusi'];
+            ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <?php 
+            session_destroy();
+            endif;
+        ?>
+
         <div class="table-responsive mt-3">
-            <table class="table align-middle table-bordered table-hover">
+            <table id="dt" class="table align-middle table-bordered table-hover">
                 <thead>
                     <tr>
                         <th>
@@ -88,7 +115,7 @@ $no = 0;
                         </td>
                     </tr>
                     <?php 
-                    }
+                      }
                     ?>
                 </tbody>
             </table>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
     include 'koneksi.php';
-    
-    $id_siswa = $_GET['ubah'];
-          
+    session_start();
+
+    $id_siswa = '';
     $nisn = '';
     $nama_siswa = '';
     $jenis_kelamin = '';
@@ -70,7 +70,7 @@
                         <option selected>Jenis Kelamin</option>
                         <option <?php if($jenis_kelamin == 'Laki-Laki'){echo "selected";} ?> value="Laki-Laki">Laki-Laki
                         </option>
-                        <option <?php if($jenis_kelamin == 'Laki-Laki'){echo "selected";} ?> value="Perempuan">Perempuan
+                        <option <?php if($jenis_kelamin == 'Perempuan'){echo "selected";} ?> value="Perempuan">Perempuan
                         </option>
                     </select>
                 </div>
@@ -78,8 +78,8 @@
             <div class="mb-3 row">
                 <label for="foto" class="col-sm-2 col-form-label">Foto Siswa</label>
                 <div class="col-sm-10">
-                    <input <?php if(!isset($_GET['ubah'])){ echo "required";} ?> required class="form-control"
-                        type="file" name="foto" id="foto" accept="image/*" />
+                    <input <?php if(!isset($_GET['ubah'])){ echo "required";} ?> class="form-control" type="file"
+                        name="foto" id="foto" accept="image/*" />
                 </div>
             </div>
             <div class="mb-3 row">
